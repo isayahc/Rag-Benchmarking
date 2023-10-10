@@ -14,15 +14,9 @@ from langchain.embeddings import HuggingFaceEmbeddings
 
 import config
 
-# model_url = "https://huggingface.co/TheBloke/Llama-2-13B-chat-GGML/resolve/main/llama-2-13b-chat.ggmlv3.q4_0.bin"
-
-# llm = llama_index.llms.llama_cpp.LlamaCPP( model_url= model_url,
-#                                           model_kwargs={"n_gpu_layers": 1})
 
 llm = llama_index.llms.llama_cpp.LlamaCPP( 
-    # model_url= config.RETRIVAL_MODEL_URL, 
     model_kwargs={"n_gpu_layers": 1}, 
-    # model_path=config.RETRIVAL_MODEL_URL
     )
 
 embed_model = HuggingFaceEmbeddings(model_name=config.EMBEDDING_MODEL_URL)
@@ -40,6 +34,12 @@ documents = SimpleDirectoryReader(
 
 # create vector store index
 index = VectorStoreIndex.from_documents(documents, service_context=service_context)
+
+
+
+
+
+# ================== Querying ================== #
 # set up query engine
 query_engine = index.as_query_engine()
 
