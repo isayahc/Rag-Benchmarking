@@ -15,6 +15,6 @@ cp example.env .env
 
 ## environment varaible
 
-## References 
+## References
 
 - https://github.com/ray-project/llm-applications/blob/main/notebooks/rag.ipynb 
