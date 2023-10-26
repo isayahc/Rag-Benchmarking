@@ -15,6 +15,12 @@ cp example.env .env
 
 ## environment varaible
 
+
+- benchmark compared to GPT
+- inference time
+- vector databases
+
+
 ## References
 
 - https://github.com/ray-project/llm-applications/blob/main/notebooks/rag.ipynb 
